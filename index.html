@@ -43,6 +43,36 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"https://www.brightgen.in/#organization",
+      "name":"BrightGen Technologies",
+      "url":"https://www.brightgen.in/",
+      "logo":"https://www.brightgen.in/BGT_new.png",
+      "sameAs":[
+        "https://www.linkedin.com/company/brightgen-technologies/"
+      ],
+      "contactPoint":{
+        "@type":"ContactPoint",
+        "telephone":"+91-7799776679",
+        "contactType":"customer support"
+      }
+    },
+    {
+      "@type":"WebSite",
+      "@id":"https://www.brightgen.in/#website",
+      "url":"https://www.brightgen.in/",
+      "name":"BrightGen Technologies",
+      "publisher":{"@id":"https://www.brightgen.in/#organization"}
+    }
+  ]
+}
+</script>
+
 <script>
 tailwind.config = {
   theme: {
@@ -105,7 +135,7 @@ tailwind.config = {
   <!-- Desktop Nav -->
   <nav class="hidden md:flex gap-6 font-medium">
     <a href="index.html" class="navLink">Home</a>
-    <a href="about us.html" class="navLink">About Us</a>
+    <a href="about-us.html" class="navLink">About Us</a>
     <a href="services.html" class="navLink">Services</a>
     <a href="careers.html" class="navLink">Careers</a>
     <a href="contact.html" class="navLink">Contact</a>
@@ -137,7 +167,7 @@ tailwind.config = {
   <nav class="flex flex-col gap-6 px-8 py-10 font-semibold">
 
     <a href="index.html" class="mobileLink">Home</a>
-    <a href="about us.html" class="mobileLink">About Us</a>
+    <a href="about-us.html" class="mobileLink">About Us</a>
     <a href="services.html" class="mobileLink">Services</a>
     <a href="careers.html" class="mobileLink">Careers</a>
     <a href="contact.html" class="mobileLink">Contact</a>
@@ -656,7 +686,7 @@ BrightGen Technologies is a global digital consulting and training company deliv
 
       <!-- LOGO CARD -->
       <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-xl">
-        <img src="BGT new.jpeg"
+        <img src="BGT new.png"
              alt="BrightGen Technologies Logo"
              class="w-40 mx-auto mb-5">
 
@@ -683,8 +713,8 @@ BrightGen Technologies is a global digital consulting and training company deliv
         <h4 class="font-semibold text-white mb-4 tracking-wide">Address</h4>
         <ul class="space-y-4 text-sm">
           <li>📍 Flat No. 302, Sai Gagan Arcade, KRCR Colony Road, Bachupally, K.V.Rangareddy, Qutubullapur, Telangana, India. - 500090. </li>
-          <li>📞 +91 7799776679</li>
-          <li>✉️ info@brightgen.in</li>
+          <li>📞 <a href="tel:+917799776679">+91 7799776679</a></li>
+          <li>✉️ <a href="mailto:info@brightgen.in">info@brightgen.in</a></li>
         </ul>
       </div>
 
@@ -693,7 +723,7 @@ BrightGen Technologies is a global digital consulting and training company deliv
         <h4 class="font-semibold text-white mb-4 tracking-wide">Quick Links</h4>
         <ul class="space-y-3 text-sm">
           <li><a href="index.html" class="hover:text-sky-400 transition">Home</a></li>
-          <li><a href="about us.html" class="hover:text-sky-400 transition">About Us</a></li>
+          <li><a href="about-us.html" class="hover:text-sky-400 transition">About Us</a></li>
           <li><a href="services.html" class="hover:text-sky-400 transition">Services</a></li>
           <li><a href="careers.html" class="hover:text-sky-400 transition">Careers</a></li>
           <li><a href="contact.html" class="hover:text-sky-400 transition">Contact</a></li>
@@ -711,8 +741,8 @@ BrightGen Technologies is a global digital consulting and training company deliv
         </p>
 
         <div class="flex gap-6">
-          <a href="privacy policy.html" class="hover:text-sky-400 transition">Privacy Policy</a>
-          <a href="terms of service.html" class="hover:text-sky-400 transition">Terms of Service</a>
+          <a href="privacy-policy.html" class="hover:text-sky-400 transition">Privacy Policy</a>
+          <a href="terms-of-service.html" class="hover:text-sky-400 transition">Terms of Service</a>
         </div>
 
       </div>
@@ -827,36 +857,6 @@ btn.addEventListener("click", function () {
   }
 
 });
-</script>
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@graph":[
-    {
-      "@type":"Organization",
-      "@id":"https://www.brightgen.in/#organization",
-      "name":"BrightGen Technologies",
-      "url":"https://www.brightgen.in/",
-      "logo":"https://www.brightgen.in/BGT_new.png",
-      "sameAs":[
-        "https://www.linkedin.com/company/brightgen-technologies/"
-      ],
-      "contactPoint":{
-        "@type":"ContactPoint",
-        "telephone":"+91-7799776679",
-        "contactType":"customer support"
-      }
-    },
-    {
-      "@type":"WebSite",
-      "@id":"https://www.brightgen.in/#website",
-      "url":"https://www.brightgen.in/",
-      "name":"BrightGen Technologies",
-      "publisher":{"@id":"https://www.brightgen.in/#organization"}
-    }
-  ]
-}
 </script>
 
 
