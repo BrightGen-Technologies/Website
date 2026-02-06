@@ -412,13 +412,37 @@ window.addEventListener("scroll",()=>{
 </section>
 
 <!-- ================= MAP ================= -->
-<section class="pb-28">
+<section class="py-24">
   <div class="max-w-7xl mx-auto px-8" data-aos="fade-up">
-    <iframe
-      class="w-full h-[450px] rounded-3xl shadow-xl"
-      src="https://maps.google.com/maps?q=hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed"
-      loading="lazy">
-    </iframe>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      
+      <div class="space-y-4">
+        <h3 class="text-2xl font-bold text-gray-800">Registered Address</h3>
+        <div class="w-full h-[450px]">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.231972155858!2d78.36411249999999!3d17.544139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8df255e57487%3A0x9f3c334ddc635dea!2sBrightGen%20Technologies!5e0!3m2!1sen!2sin!4v1770381427657!5m2!1sen!2sin" 
+            class="w-full h-full rounded-xl shadow-lg border-0" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <h3 class="text-2xl font-bold text-gray-800">Office Address</h3>
+        <div class="w-full h-[450px]">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.367442830909!2d78.4410408!3d17.442118699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91cb1d0e6e03%3A0x2bb5dc5cc43d9cb8!2sBrightGen%20Technologies!5e0!3m2!1sen!2sin!4v1770381868341!5m2!1sen!2sin" 
+            class="w-full h-full rounded-xl shadow-lg border-0" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
