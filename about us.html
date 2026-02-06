@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>About BrightGen Technologies | Digital Transformation Leaders</title>
+
+<meta name="description"
+      content="BrightGen Technologies is a global technology consulting and training company delivering software, cloud, cybersecurity, analytics and workforce transformation solutions worldwide." />
+
+<meta name="keywords"
+      content="BrightGen Technologies, IT Consulting, Cloud Services, Software Development, Cybersecurity, Digital Transformation, Training, Analytics" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<link rel="canonical" href="https://www.brightgentech.com/about.html"/>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="icon" type="image/x-icon" href="./favicon_io/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
+
+<link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
+
+<link rel="manifest" href="./favicon_io/site.webmanifest">
+
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        brandBlue: "#0369a1",
+        brandOrange: "#f59e0b",
+        darkBg: "#0f172a"
+      }
+    }
+  }
+}
+</script>
+</head>
+
+<body class="font-sans text-slate-800 bg-white scroll-smooth">
+
+<!-- ================= HEADER ================= -->
+<header id="mainHeader"
+  class="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 bg-white/80 backdrop-blur-xl shadow transition-all duration-300 z-50">
+
+<!-- Logo -->
+<div class="logo-wrap" style="display: flex; align-items: center; justify-content: start; padding-left: 20px;">
+  
+  <style>
+    .logo-icon-responsive {
+      /* Controls the size - adjust these to fit your header */
+      width: 100%;
+      max-width: 150px; 
+      height: auto;
+      display: block;
+    }
+
+    /* Tablet sizing */
+    @media (max-width: 768px) {
+      .logo-icon-responsive {
+        max-width: 120px;
+      }
+      .logo-wrap {
+        padding-left: 15px; /* Slightly smaller gap on tablets */
+      }
+    }
+
+    /* Phone sizing */
+    @media (max-width: 480px) {
+      .logo-icon-responsive {
+        max-width: 100px;
+      }
+      .logo-wrap {
+        padding-left: 10px; /* Minimal gap on small phones */
+      }
+    }
+  </style>
+
+  <a href="index.html" class="inline-block">
+   <img src="BGT_new.png" alt="BrightGen Logo" class="logo-icon-responsive"/>
+  </a>
+</div>
+
+  <!-- Desktop Nav -->
+  <nav class="hidden md:flex gap-6 font-medium">
+    <a href="index.html" class="navLink">Home</a>
+    <a href="about us.html" class="navLink">About Us</a>
+    <a href="services.html" class="navLink">Services</a>
+    <a href="careers.html" class="navLink">Careers</a>
+    <a href="contact.html" class="navLink">Contact</a>
+  </nav>
+
+  <!-- Hamburger -->
+  <button id="menuBtn"
+          aria-label="Open Menu"
+          class="md:hidden relative z-[60]">
+
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+
+</header>
+
+<!-- ============ MOBILE GLASS PANEL ============ -->
+<div id="mobilePanel"
+     class="fixed top-24 right-6 w-[260px] rounded-3xl bg-white/60 backdrop-blur-2xl border border-white/30 shadow-2xl opacity-0 pointer-events-none scale-95 transition-all duration-300 z-50">
+
+  <!-- Glow -->
+  <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-sky-400/20 to-orange-400/20 blur-xl -z-10"></div>
+
+  <!-- Close Button -->
+  <button id="closeBtn"
+          class="absolute top-4 right-4 text-xl font-bold">✕</button>
+
+  <nav class="flex flex-col gap-6 px-8 py-10 font-semibold">
+
+    <a href="index.html" class="mobileLink">Home</a>
+    <a href="about us.html" class="mobileLink">About Us</a>
+    <a href="services.html" class="mobileLink">Services</a>
+    <a href="careers.html" class="mobileLink">Careers</a>
+    <a href="contact.html" class="mobileLink">Contact</a>
+
+    <!-- CTA -->
+    <a href="contact.html"
+       class="mt-4 bg-gradient-to-r from-sky-600 to-orange-400 text-white py-3 rounded-xl text-center">
+      Enquire Now
+    </a>
+
+  </nav>
+</div>
+
+<style>
+.hamburger-line{
+  width:28px;
+  height:3px;
+  background:#0f172a;
+  display:block;
+  margin:6px 0;
+  transition:.4s;
+}
+
+/* X animation */
+.menu-open .hamburger-line:nth-child(1){
+  transform:rotate(45deg) translate(6px,6px);
+}
+.menu-open .hamburger-line:nth-child(2){
+  opacity:0;
+}
+.menu-open .hamburger-line:nth-child(3){
+  transform:rotate(-45deg) translate(7px,-7px);
+}
+
+/* Active page */
+.navLink.active,
+.mobileLink.active{
+  color:#0284c7;
+  font-weight:700;
+}
+
+/* Header shrink */
+.shrink{
+  padding-top:.5rem!important;
+  padding-bottom:.5rem!important;
+}
+</style>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const mobilePanel = document.getElementById("mobilePanel");
+const closeBtn = document.getElementById("closeBtn");
+const header = document.getElementById("mainHeader");
+const logo = document.getElementById("logoImg");
+
+let startX = 0;
+
+// OPEN
+menuBtn.addEventListener("click", () => {
+  document.body.classList.toggle("menu-open");
+
+  mobilePanel.classList.toggle("opacity-0");
+  mobilePanel.classList.toggle("pointer-events-none");
+  mobilePanel.classList.toggle("scale-95");
+});
+
+// CLOSE
+closeBtn.addEventListener("click", closeMenu);
+
+function closeMenu(){
+  document.body.classList.remove("menu-open");
+
+  mobilePanel.classList.add("opacity-0","pointer-events-none","scale-95");
+}
+
+// AUTO CLOSE ON LINK
+document.querySelectorAll(".mobileLink").forEach(link=>{
+  link.addEventListener("click", closeMenu);
+});
+
+// ACTIVE PAGE
+document.querySelectorAll(".navLink,.mobileLink").forEach(link=>{
+  if(link.href === window.location.href){
+    link.classList.add("active");
+  }
+});
+
+document.querySelector(".logo-text").style.fontSize =
+  window.scrollY > 80 ? "1.3rem" : "1.55rem";
+
+// SWIPE CLOSE
+mobilePanel.addEventListener("touchstart",e=>{
+  startX = e.touches[0].clientX;
+});
+
+mobilePanel.addEventListener("touchend",e=>{
+  let endX = e.changedTouches[0].clientX;
+  if(endX - startX > 80){
+    closeMenu();
+  }
+});
+
+// SHRINK HEADER
+window.addEventListener("scroll",()=>{
+  if(window.scrollY > 80){
+    header.classList.add("shrink");
+    logo.classList.add("scale-90");
+  } else {
+    header.classList.remove("shrink");
+    logo.classList.remove("scale-90");
+  }
+});
+</script>
+
+<!-- ================================================= HERO ================================================= -->
+
+<section class="bg-gradient-to-r from-orange-500 to-sky-600 text-white py-28">
+
+  <!--<div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c')] bg-cover bg-center"></div>-->
+
+  <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
+
+    <div data-aos="fade-right">
+
+      <h1 class="text-5xl lg:text-6xl font-extrabold mb-6">
+        Connecting <span class="text-brandOrange">Technology</span>
+      </h1>
+
+      <p class="text-lg mb-8 opacity-95">
+        BrightGen Technologies is a global consulting and training organization delivering
+        digital platforms, cloud modernization, cybersecurity assurance and workforce
+        transformation programs to enterprises worldwide.
+      </p>
+
+      <blockquote class="border-l-4 border-brandOrange pl-5 italic opacity-90">
+        “We engineer scalable systems that accelerate growth, reduce risk and empower
+        innovation across industries.”
+      </blockquote>
+
+    </div>
+
+    <!-- METRIC CARDS -->
+    <div class="grid grid-cols-2 gap-6" data-aos="fade-left">
+
+      <div class="bg-white/10 p-8 rounded-2xl backdrop-blur">
+        🌍 <h4 class="font-semibold mt-3">Global Reach</h4>
+        <p class="text-sm opacity-90">Multi-country delivery</p>
+      </div>
+
+      <div class="bg-white/10 p-8 rounded-2xl backdrop-blur">
+        👩‍💻 <h4 class="font-semibold mt-3">Expert Teams</h4>
+        <p class="text-sm opacity-90">Certified engineers</p>
+      </div>
+
+      <div class="bg-white/10 p-8 rounded-2xl backdrop-blur">
+        🔐 <h4 class="font-semibold mt-3">Secure Solutions</h4>
+        <p class="text-sm opacity-90">Compliance driven</p>
+      </div>
+
+      <div class="bg-white/10 p-8 rounded-2xl backdrop-blur">
+        🚀 <h4 class="font-semibold mt-3">Innovation First</h4>
+        <p class="text-sm opacity-90">Future-ready tech</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================= GLOBAL ================================================= -->
+
+<section class="py-28 bg-slate-50">
+
+  <div class="max-w-6xl mx-auto px-8 text-center">
+
+    <h2 class="text-4xl font-bold mb-6">Global Engineering Excellence</h2>
+
+    <p class="max-w-3xl mx-auto text-slate-600 mb-16">
+      Our consultants operate across India and international markets delivering
+      enterprise solutions in cloud, analytics, automation and cybersecurity.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-12">
+
+      <div class="bg-white p-10 rounded-3xl shadow-lg hover:shadow-xl transition" data-aos="zoom-in">
+        🌏
+        <h3 class="font-semibold mt-4">India</h3>
+        <p class="text-sm">Hyderabad · Bengaluru </p>
+      </div>
+
+      <div class="bg-white p-10 rounded-3xl shadow-lg hover:shadow-xl transition" data-aos="zoom-in">
+        🌍
+        <h3 class="font-semibold mt-4">Global Delivery</h3>
+        <p class="text-sm">International Client Engagements</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================= APPROACH ================================================= -->
+
+<section class="relative bg-darkBg text-white py-32 overflow-hidden">
+
+  <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-20">
+
+    <div data-aos="fade-right">
+
+      <h2 class="text-4xl font-bold mb-6">Our Approach</h2>
+
+      <p class="opacity-90 mb-6">
+        We partner closely with organizations to modernize digital ecosystems,
+        improve security posture, streamline operations and create
+        long-term competitive advantage.
+      </p>
+
+      <p class="opacity-90 mb-6">
+        Our multidisciplinary teams blend engineering depth with strategic insight
+        to design resilient, scalable systems.
+      </p>
+
+      <span class="italic text-brandOrange">“Think digital. Think secure. Think BrightGen.”</span>
+
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0"
+         class="rounded-3xl shadow-xl"
+         data-aos="fade-left"/>
+
+  </div>
+</section>
+
+<!-- ================================================= CULTURE ================================================= -->
+
+<section class="py-32 bg-white">
+
+  <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-20 items-center">
+
+    <div data-aos="zoom-in">
+
+      <img src="https://www.opusresourcing.com/wp-content/uploads/2024/01/campaign-creators-gMsnXqILjp4-unsplash-scaled.jpg"
+           class="rounded-full w-96 mx-auto shadow-2xl"/>
+
+    </div>
+
+    <div data-aos="fade-left">
+
+      <h2 class="text-4xl font-bold mb-6">Our Culture</h2>
+
+      <p class="text-slate-600 mb-6">
+        We foster a culture of integrity, inclusion and technical excellence.
+        Our leaders bring real-world experience delivering complex digital programs.
+      </p>
+
+      <p class="text-slate-600 mb-6">
+        Our recruitment and development practices ensure every consultant is equipped
+        to create measurable business outcomes.
+      </p>
+
+      <a href="careers.html"
+         class="inline-flex items-center gap-3 bg-brandOrange text-white px-8 py-4 rounded-xl shadow hover:scale-105 transition">
+        Work With Us →
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================= CTA ================================================= -->
+
+<section class="bg-brandBlue text-white py-28 text-center">
+
+  <h2 class="text-4xl font-bold mb-6">Ready to Build the Future?</h2>
+
+  <p class="mb-10">Partner with BrightGen Technologies to accelerate innovation.</p>
+
+  <a href="contact.html"
+     class="bg-white text-brandBlue px-10 py-5 rounded-2xl font-semibold shadow">
+     Contact Us
+  </a>
+
+</section>
+
+<!-- ================= PREMIUM GLASS FOOTER ================= -->
+
+<footer class="relative overflow-hidden text-slate-100">
+
+  <!-- 🌊 STATIC WAVE DIVIDER -->
+  <div class="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none"
+         class="w-full h-20 fill-sky-950">
+      <path d="M0,40 C120,60 240,20 360,35 480,50 600,80 720,70 840,60 960,30 1080,35 1200,40 1320,60 1440,55 L1440,0 L0,0 Z"></path>
+    </svg>
+  </div>
+
+  <!-- BACKDROP -->
+  <div class="bg-gradient-to-br from-slate-950 via-indigo-950 to-sky-950 pt-10 pb-10 relative">
+
+    <!-- SOFT LIGHT ORBS -->
+    <div class="absolute -top-24 -left-24 w-80 h-80 bg-sky-500/20 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl"></div>
+
+    <!-- GLASS GRID -->
+    <div class="container mx-auto px-6 grid gap-14 md:grid-cols-3 text-center relative z-10">
+
+      <!-- LOGO CARD -->
+      <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-xl">
+        <img src="BGT new.jpeg"
+             alt="BrightGen Technologies Logo"
+             class="w-40 mx-auto mb-5">
+
+        <p class="text-sm leading-relaxed opacity-90">
+          BrightGen Technologies delivers enterprise software, cloud modernization and global technology training programs.
+        </p>
+
+        <div class="flex justify-center gap-5 mt-6 text-xl">
+          <a href="https://www.linkedin.com/company/brightgen-technologies/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="hover:text-sky-400 transition" 
+              aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <!-- <a href="#" class="hover:text-sky-400 transition">𝕏</a>
+          <a href="#" class="hover:text-sky-400 transition">f</a> -->
+        </div>
+      </div>
+
+      <!-- CONTACT CARD -->
+      <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-xl">
+        <h4 class="font-semibold text-white mb-4 tracking-wide">Address</h4>
+        <ul class="space-y-4 text-sm">
+          <li>📍 Flat No. 302, Sai Gagan Arcade, KRCR Colony Road, Bachupally, K.V.Rangareddy, Qutubullapur, Telangana, India. - 500090. </li>
+          <li>📞 +91 7799776679</li>
+          <li>✉️ info@brightgen.in</li>
+        </ul>
+      </div>
+
+      <!-- QUICK LINKS CARD -->
+      <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-xl">
+        <h4 class="font-semibold text-white mb-4 tracking-wide">Quick Links</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="index.html" class="hover:text-sky-400 transition">Home</a></li>
+          <li><a href="about us.html" class="hover:text-sky-400 transition">About Us</a></li>
+          <li><a href="services.html" class="hover:text-sky-400 transition">Services</a></li>
+          <li><a href="careers.html" class="hover:text-sky-400 transition">Careers</a></li>
+          <li><a href="contact.html" class="hover:text-sky-400 transition">Contact</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="border-t border-white/10 mt-16 pt-6 relative z-10">
+      <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+
+        <p>
+          © <span id="year"></span> BrightGen Technologies. All rights reserved.
+        </p>
+
+        <div class="flex gap-6">
+          <a href="privacy policy.html" class="hover:text-sky-400 transition">Privacy Policy</a>
+          <a href="terms of service.html" class="hover:text-sky-400 transition">Terms of Service</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<!-- ================================================= JS ================================================= -->
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+  duration: 900,
+  once: true
+});
+</script>
+
+<!-- ================= FLOATING GLOBAL CTA ================= -->
+
+<!-- Enquire Button -->
+<a href="contact.html"
+   class="fixed bottom-6 right-6 bg-brandBlue text-white px-6 py-4 rounded-full shadow-xl hover:bg-brandOrange transition z-50">
+  📩 Enquire
+</a>
+
+<!-- WhatsApp Chat -->
+<a href="https://wa.me/917799776679"
+   target="_blank"
+   aria-label="Chat on WhatsApp"
+   class="fixed bottom-24 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-xl text-3xl z-50 hover:scale-110 transition">
+  💬
+</a>
+
+</body>
+</html>
