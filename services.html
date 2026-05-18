@@ -1,657 +1,1054 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8"/>
 <title>Our Services | BrightGen Technologies</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Explore BrightGen Technologies services including enterprise software development, cloud consulting, cybersecurity training, internships, BEC English programs and fintech solutions in India.">
-
+<meta name="description" content="Explore BrightGen Technologies services — Financial Services, Imports & Exports, and IT Trainings.">
 <meta name="robots" content="index, follow">
-
 <link rel="canonical" href="https://www.brightgen.in/services.html">
-
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 <link rel="icon" type="image/x-icon" href="./favicon_io/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
-
 <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
-
 <link rel="manifest" href="./favicon_io/site.webmanifest">
-
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/mstile-144x144.png">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Services | BrightGen Technologies — Software, Cloud & Training">
-<meta property="og:description" content="BrightGen Technologies provides enterprise software development, cloud migration, internship programs, IT training and financial consulting.">
+<meta property="og:title" content="Services | BrightGen Technologies">
 <meta property="og:url" content="https://www.brightgen.in/services.html">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://www.brightgen.in/BGT_new.png">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="BrightGen Technologies Services">
-<meta name="twitter:description" content="Enterprise IT solutions, cloud consulting and professional training from BrightGen Technologies India.">
-<meta name="twitter:image" content="https://www.brightgen.in/BGT_new.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-.fade-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
+/* ── BRAND TOKENS (sky-blue + orange, matching brightgen.in) ── */
+:root{
+  --sky:     #0284c7;   /* sky-600 */
+  --sky-d:   #0369a1;   /* sky-700 */
+  --sky-dd:  #075985;   /* sky-800 */
+  --sky-bg:  #e0f2fe;   /* sky-100 */
+  --orange:  #f97316;   /* orange-500 */
+  --orange-d:#ea580c;   /* orange-600 */
+  --orange-bg:#fff7ed;  /* orange-50  */
+  --dark:    #0f172a;   /* slate-900 */
+  --dark2:   #1e293b;   /* slate-800 */
+  --slate:   #475569;
+  --muted:   #64748b;
+  --border:  #e2e8f0;
+  --light:   #f8fafc;
+  --white:   #ffffff;
+  --cream:   #f9fafb;
 }
-.fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--cream);color:var(--dark);-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer}
+
+/* ── LOGO ── */
+.logo-icon-responsive{width:100%;max-width:150px;height:auto;display:block}
+@media(max-width:768px){.logo-icon-responsive{max-width:120px}}
+@media(max-width:480px){.logo-icon-responsive{max-width:100px}}
+
+/* ── HAMBURGER ── */
+.hline{width:26px;height:2.5px;background:var(--dark);display:block;margin:5px 0;transition:.35s;border-radius:2px}
+.menu-open .hline:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.menu-open .hline:nth-child(2){opacity:0}
+.menu-open .hline:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.navLink.active{color:var(--sky-d);font-weight:700}
+.nav-shrink{padding-top:.5rem!important;padding-bottom:.5rem!important;box-shadow:0 4px 20px rgba(0,0,0,.08)!important}
+
+/* ── FADE UP ── */
+.fu{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.fu.show{opacity:1;transform:translateY(0)}
+.fu:nth-child(2){transition-delay:.1s}
+.fu:nth-child(3){transition-delay:.2s}
+
+/* ══════════════════════════════════════════════
+   3-CARD GRID
+══════════════════════════════════════════════ */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 24px 80px;
 }
+@media(max-width:900px){.services-grid{grid-template-columns:1fr}}
+
+/* ── CATEGORY CARD ── */
+.cat-card{
+  border-radius:20px;
+  border:1.5px solid var(--border);
+  background:var(--white);
+  overflow:hidden;
+  transition:box-shadow .25s,border-color .25s;
+  display:flex;
+  flex-direction:column;
+}
+.cat-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.1)}
+
+/* Open state — glow border in brand colour */
+.cat-card.open-fin{border-color:var(--orange);box-shadow:0 0 0 3px rgba(249,115,22,.12),0 12px 40px rgba(0,0,0,.1)}
+.cat-card.open-imp{border-color:var(--sky);box-shadow:0 0 0 3px rgba(2,132,199,.12),0 12px 40px rgba(0,0,0,.1)}
+.cat-card.open-it {border-color:var(--sky-d);box-shadow:0 0 0 3px rgba(3,105,161,.12),0 12px 40px rgba(0,0,0,.1)}
+
+/* ── CARD HEADER (always visible) ── */
+.cat-head{
+  padding:28px 24px 22px;
+  cursor:pointer;
+  user-select:none;
+  position:relative;
+}
+
+/* Gradient strip at top of each card */
+.cat-card:nth-child(1) .cat-head::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--orange),var(--orange-d))}
+.cat-card:nth-child(2) .cat-head::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--sky),var(--sky-dd))}
+.cat-card:nth-child(3) .cat-head::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--sky-d),var(--sky-dd))}
+
+.cat-icon-wrap{
+  width:56px;height:56px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;margin-bottom:16px;
+}
+.icon-orange{background:var(--orange-bg);border:1.5px solid rgba(249,115,22,.2)}
+.icon-sky   {background:var(--sky-bg);   border:1.5px solid rgba(2,132,199,.2)}
+
+.cat-head h2{font-size:1.05rem;font-weight:700;color:var(--dark);margin-bottom:6px;line-height:1.3}
+.cat-head p {font-size:.78rem;color:var(--muted);line-height:1.55;margin-bottom:18px}
+
+/* Click prompt */
+.cat-prompt{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.76rem;font-weight:600;
+  padding:7px 14px;border-radius:30px;
+  border:1.5px solid var(--border);
+  color:var(--muted);
+  transition:all .2s;
+}
+.cat-card.open-fin .cat-prompt,
+.cat-card.open-imp .cat-prompt,
+.cat-card.open-it  .cat-prompt{color:var(--white)}
+.cat-card.open-fin .cat-prompt{background:var(--orange);border-color:var(--orange)}
+.cat-card.open-imp .cat-prompt,
+.cat-card.open-it  .cat-prompt{background:var(--sky);border-color:var(--sky)}
+.cat-prompt .chevron{transition:transform .3s}
+.cat-card.open-fin .chevron,
+.cat-card.open-imp .chevron,
+.cat-card.open-it  .chevron{transform:rotate(180deg)}
+
+/* ── DROPDOWN PANEL (hidden by default) ── */
+.cat-body{
+  display:none;
+  border-top:1px solid var(--border);
+  flex-direction:column;
+  flex:1;
+}
+.cat-card.open-fin .cat-body,
+.cat-card.open-imp .cat-body,
+.cat-card.open-it  .cat-body{display:flex}
+
+/* ── SUB-SERVICE BUTTONS ── */
+.sub-btn{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 20px;
+  border:none;background:none;text-align:left;width:100%;
+  border-bottom:1px solid var(--border);
+  transition:background .15s;
+  position:relative;
+}
+.sub-btn:last-of-type{border-bottom:none}
+.sub-btn:hover{background:var(--light)}
+.sub-btn.active{background:#f0f9ff}
+
+/* Left accent */
+.sub-btn::before{content:'';position:absolute;left:0;top:25%;bottom:25%;width:0;border-radius:0 3px 3px 0;transition:width .2s}
+.cat-card.open-fin .sub-btn.active::before{width:3px;background:var(--orange)}
+.cat-card.open-imp .sub-btn.active::before,
+.cat-card.open-it  .sub-btn.active::before{width:3px;background:var(--sky)}
+
+.sub-ico{width:30px;height:30px;border-radius:8px;background:var(--light);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;transition:background .15s}
+.sub-btn.active .sub-ico,.sub-btn:hover .sub-ico{background:var(--orange-bg)}
+.cat-card.open-imp .sub-btn.active .sub-ico,
+.cat-card.open-imp .sub-btn:hover .sub-ico,
+.cat-card.open-it  .sub-btn.active .sub-ico,
+.cat-card.open-it  .sub-btn:hover .sub-ico{background:var(--sky-bg)}
+
+.sub-name{flex:1;font-size:.84rem;font-weight:500;color:var(--slate)}
+.sub-btn.active .sub-name{color:var(--dark);font-weight:600}
+.sub-caret{font-size:.7rem;color:#cbd5e1;transition:color .2s,transform .2s}
+.sub-btn.active .sub-caret,.sub-btn:hover .sub-caret{color:var(--sky);transform:translateX(3px)}
+.cat-card.open-fin .sub-btn.active .sub-caret,
+.cat-card.open-fin .sub-btn:hover .sub-caret{color:var(--orange)}
+
+/* ══════════════════════════════════════════════
+   DETAIL DRAWER (appears below grid, full width)
+══════════════════════════════════════════════ */
+.detail-drawer{
+  display:none;
+  max-width:1100px;margin:0 auto 32px;
+  padding:0 24px;
+  animation:slideIn .22s ease;
+}
+.detail-drawer.visible{display:block}
+@keyframes slideIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+
+.detail-inner{
+  background:var(--white);
+  border-radius:20px;
+  border:1.5px solid var(--border);
+  padding:36px 40px;
+  box-shadow:0 8px 32px rgba(0,0,0,.07);
+}
+@media(max-width:640px){.detail-inner{padding:24px 18px}}
+
+/* Close button */
+.detail-close{
+  float:right;margin-left:16px;
+  width:32px;height:32px;border-radius:50%;
+  border:1.5px solid var(--border);
+  background:none;color:var(--muted);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.85rem;cursor:pointer;
+  transition:background .2s,border-color .2s;
+}
+.detail-close:hover{background:var(--light);border-color:var(--dark)}
+
+/* Detail top */
+.d-top{display:flex;align-items:flex-start;gap:18px;margin-bottom:24px;padding-bottom:22px;border-bottom:1.5px solid var(--border)}
+.d-icon{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,var(--sky),var(--sky-dd));display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+.d-icon.orange{background:linear-gradient(135deg,var(--orange),var(--orange-d))}
+.d-title{font-size:1.2rem;font-weight:700;color:var(--dark);margin-bottom:5px}
+.d-sub{font-size:.85rem;color:var(--muted);line-height:1.65;max-width:520px}
+
+/* Pills */
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:30px;font-size:.75rem;font-weight:600}
+.pill-orange{background:var(--orange-bg);color:var(--orange-d);border:1px solid rgba(249,115,22,.25)}
+.pill-sky   {background:var(--sky-bg);   color:var(--sky-dd);  border:1px solid rgba(2,132,199,.25)}
+.pill-green {background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+.pill-purple{background:#faf5ff;color:#6b21a8;border:1px solid #e9d5ff}
+.pill-slate {background:var(--light);color:var(--slate);border:1px solid var(--border)}
+
+/* Spec table */
+.spec-table{width:100%;border-collapse:collapse;margin-bottom:22px;font-size:.84rem}
+.spec-table tr{border-bottom:1px solid var(--border)}
+.spec-table tr:last-child{border-bottom:none}
+.spec-table td{padding:10px 4px;vertical-align:top}
+.spec-table td:first-child{color:var(--muted);font-weight:500;width:36%;padding-right:16px}
+.spec-table td:last-child{color:var(--dark);font-weight:600}
+
+/* Feature grid */
+.feat-label{font-size:.67rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sky-d);margin-bottom:12px}
+.feat-label.orange-label{color:var(--orange-d)}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:22px}
+@media(max-width:560px){.feat-grid{grid-template-columns:1fr}}
+.feat-item{display:flex;gap:9px;align-items:flex-start;font-size:.82rem;color:var(--slate);line-height:1.55;padding:9px 12px;background:var(--light);border-radius:8px;border:1px solid var(--border)}
+.feat-check{color:var(--sky-d);font-size:.75rem;flex-shrink:0;margin-top:2px;font-weight:700}
+.feat-check.orange{color:var(--orange-d)}
+
+/* Disclaimer */
+.disc{font-size:.7rem;color:var(--muted);line-height:1.75;padding:10px 16px;background:var(--light);border-left:3px solid var(--orange);border-radius:0 8px 8px 0;margin-bottom:22px}
+.disc.blue-border{border-left-color:var(--sky)}
+
+/* Buttons */
+.btn-orange{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.85rem;padding:11px 24px;border-radius:10px;border:none;background:var(--orange);color:#fff;cursor:pointer;text-decoration:none;transition:all .2s}
+.btn-orange:hover{background:var(--orange-d);transform:translateY(-2px);box-shadow:0 6px 18px rgba(249,115,22,.3)}
+.btn-sky{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.85rem;padding:11px 24px;border-radius:10px;border:none;background:var(--sky-d);color:#fff;cursor:pointer;text-decoration:none;transition:all .2s}
+.btn-sky:hover{background:var(--sky-dd);transform:translateY(-2px);box-shadow:0 6px 18px rgba(3,105,161,.3)}
+.btn-outline-o{display:inline-flex;align-items:center;gap:8px;font-weight:500;font-size:.85rem;padding:10px 22px;border-radius:10px;border:1.5px solid var(--orange);color:var(--orange-d);text-decoration:none;transition:all .2s;background:none}
+.btn-outline-o:hover{background:var(--orange-bg)}
+.btn-outline-s{display:inline-flex;align-items:center;gap:8px;font-weight:500;font-size:.85rem;padding:10px 22px;border-radius:10px;border:1.5px solid var(--sky);color:var(--sky-d);text-decoration:none;transition:all .2s;background:none}
+.btn-outline-s:hover{background:var(--sky-bg)}
+.d-actions{display:flex;gap:12px;flex-wrap:wrap}
 </style>
-
-<script type="application/ld+json">
-{
- "@context":"https://schema.org",
- "@type":"Service",
- "provider":{
-   "@type":"Organization",
-   "name":"BrightGen Technologies",
-   "url":"https://www.brightgen.in",
-   "logo":"https://www.brightgen.in/BGT_new.png"
- },
- "areaServed":"IN",
- "serviceType":[
-   "Software Development",
-   "Cloud Consulting",
-   "Cybersecurity Training",
-   "Internship Programs",
-   "Business English Certification",
-   "Financial Consulting"
- ]
-}
-</script>
-
 </head>
 
-<body class="bg-slate-50 text-slate-800">
+<body>
 
-<!-- ================= HEADER ================= -->
+<!-- ══ HEADER ══════════════════════════════════════════════════════════ -->
 <header id="mainHeader"
-  class="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 bg-white/80 backdrop-blur-xl shadow transition-all duration-300 z-50">
+  class="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 bg-white/90 backdrop-blur-xl shadow-sm border-b border-slate-100 transition-all duration-300 z-50">
 
-<!-- Logo -->
-<div class="logo-wrap" style="display: flex; align-items: center; justify-content: start; padding-left: 20px;">
-  
-  <style>
-    .logo-icon-responsive {
-      /* Controls the size - adjust these to fit your header */
-      width: 100%;
-      max-width: 150px; 
-      height: auto;
-      display: block;
-    }
+  <div style="display:flex;align-items:center;padding-left:12px">
+    <a href="index.html"><img src="BGT_new.png" alt="BrightGen Technologies" class="logo-icon-responsive"/></a>
+  </div>
 
-    /* Tablet sizing */
-    @media (max-width: 768px) {
-      .logo-icon-responsive {
-        max-width: 120px;
-      }
-      .logo-wrap {
-        padding-left: 15px; /* Slightly smaller gap on tablets */
-      }
-    }
-
-    /* Phone sizing */
-    @media (max-width: 480px) {
-      .logo-icon-responsive {
-        max-width: 100px;
-      }
-      .logo-wrap {
-        padding-left: 10px; /* Minimal gap on small phones */
-      }
-    }
-  </style>
-
-  <a href="index.html" class="inline-block">
-   <img src="BGT_new.png" alt="BrightGen Technologies Company Logo" class="logo-icon-responsive"/>
-  </a>
-</div>
-
-  <!-- Desktop Nav -->
-  <nav class="hidden md:flex gap-6 font-medium">
-    <a href="index.html" class="navLink">Home</a>
-    <a href="about-us.html" class="navLink">About Us</a>
-    <a href="services.html" class="navLink">Services</a>
-    <a href="careers.html" class="navLink">Careers</a>
-    <a href="contact.html" class="navLink">Contact</a>
+  <nav class="hidden md:flex gap-1 font-medium">
+    <a href="index.html"    class="navLink text-slate-500 hover:text-sky-600 text-sm px-3 py-2 rounded-lg hover:bg-sky-50 transition">Home</a>
+    <a href="about-us.html" class="navLink text-slate-500 hover:text-sky-600 text-sm px-3 py-2 rounded-lg hover:bg-sky-50 transition">About Us</a>
+    <a href="services.html" class="navLink active text-sm px-3 py-2 rounded-lg">Services</a>
+    <a href="careers.html"  class="navLink text-slate-500 hover:text-sky-600 text-sm px-3 py-2 rounded-lg hover:bg-sky-50 transition">Careers</a>
+    <a href="contact.html"  class="navLink text-slate-500 hover:text-sky-600 text-sm px-3 py-2 rounded-lg hover:bg-sky-50 transition">Contact</a>
+    <a href="contact.html"  class="ml-2 bg-sky-700 text-white text-sm font-semibold px-5 py-2 rounded-xl hover:bg-sky-800 transition">Get in Touch</a>
   </nav>
 
-  <!-- Hamburger -->
-  <button id="menuBtn"
-          aria-label="Open Menu"
-          class="md:hidden relative z-[60]">
-
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
+  <button id="burgerBtn" aria-label="Open menu" class="md:hidden flex flex-col p-1 ml-auto">
+    <span class="hline"></span>
+    <span class="hline"></span>
+    <span class="hline"></span>
   </button>
-
 </header>
 
-<!-- ============ MOBILE GLASS PANEL ============ -->
-<div id="mobilePanel"
-     class="fixed top-24 right-6 w-[260px] rounded-3xl bg-white/60 backdrop-blur-2xl border border-white/30 shadow-2xl opacity-0 pointer-events-none scale-95 transition-all duration-300 z-50">
-
-  <!-- Glow -->
-  <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-sky-400/20 to-orange-400/20 blur-xl -z-10"></div>
-
-  <!-- Close Button -->
-  <button id="closeBtn"
-          class="absolute top-4 right-4 text-xl font-bold">✕</button>
-
-  <nav class="flex flex-col gap-6 px-8 py-10 font-semibold">
-
-    <a href="index.html" class="mobileLink">Home</a>
-    <a href="about-us.html" class="mobileLink">About Us</a>
-    <a href="services.html" class="mobileLink">Services</a>
-    <a href="careers.html" class="mobileLink">Careers</a>
-    <a href="contact.html" class="mobileLink">Contact</a>
-
-    <!-- CTA -->
-    <a href="contact.html"
-       class="mt-4 bg-gradient-to-r from-sky-600 to-orange-400 text-white py-3 rounded-xl text-center">
-      Enquire Now
-    </a>
-
-  </nav>
+<!-- Mobile panel -->
+<div id="mobPanel" class="hidden fixed top-[70px] left-0 right-0 bg-white border-b border-slate-100 shadow-xl z-40 flex-col px-6 py-4 gap-1">
+  <a href="index.html"    class="block py-3 px-3 rounded-lg text-slate-600 hover:bg-slate-50 text-sm font-medium">Home</a>
+  <a href="about-us.html" class="block py-3 px-3 rounded-lg text-slate-600 hover:bg-slate-50 text-sm font-medium">About Us</a>
+  <a href="services.html" class="block py-3 px-3 rounded-lg text-sky-700 font-semibold text-sm">Services</a>
+  <a href="careers.html"  class="block py-3 px-3 rounded-lg text-slate-600 hover:bg-slate-50 text-sm font-medium">Careers</a>
+  <a href="contact.html"  class="block py-3 px-3 rounded-lg text-slate-600 hover:bg-slate-50 text-sm font-medium">Contact</a>
+  <a href="contact.html"  class="mt-2 block py-3 px-3 rounded-xl bg-gradient-to-r from-sky-600 to-orange-400 text-white text-sm font-bold text-center">Get in Touch</a>
 </div>
-
-<style>
-.hamburger-line{
-  width:28px;
-  height:3px;
-  background:#0f172a;
-  display:block;
-  margin:6px 0;
-  transition:.4s;
-}
-
-/* X animation */
-.menu-open .hamburger-line:nth-child(1){
-  transform:rotate(45deg) translate(6px,6px);
-}
-.menu-open .hamburger-line:nth-child(2){
-  opacity:0;
-}
-.menu-open .hamburger-line:nth-child(3){
-  transform:rotate(-45deg) translate(7px,-7px);
-}
-
-/* Active page */
-.navLink.active,
-.mobileLink.active{
-  color:#0284c7;
-  font-weight:700;
-}
-
-/* Header shrink */
-.shrink{
-  padding-top:.5rem!important;
-  padding-bottom:.5rem!important;
-}
-</style>
 
 <script>
-const menuBtn = document.getElementById("menuBtn");
-const mobilePanel = document.getElementById("mobilePanel");
-const closeBtn = document.getElementById("closeBtn");
-const header = document.getElementById("mainHeader");
-const logo = document.getElementById("logoImg");
-
-let startX = 0;
-
-// OPEN
-menuBtn.addEventListener("click", () => {
+const burgerBtn=document.getElementById("burgerBtn"),mobPanel=document.getElementById("mobPanel"),mainHeader=document.getElementById("mainHeader");
+burgerBtn.addEventListener("click",()=>{
   document.body.classList.toggle("menu-open");
-
-  mobilePanel.classList.toggle("opacity-0");
-  mobilePanel.classList.toggle("pointer-events-none");
-  mobilePanel.classList.toggle("scale-95");
+  mobPanel.classList.toggle("hidden");
+  mobPanel.classList.toggle("flex");
 });
-
-// CLOSE
-closeBtn.addEventListener("click", closeMenu);
-
-function closeMenu(){
+mobPanel.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
   document.body.classList.remove("menu-open");
-
-  mobilePanel.classList.add("opacity-0","pointer-events-none","scale-95");
-}
-
-// AUTO CLOSE ON LINK
-document.querySelectorAll(".mobileLink").forEach(link=>{
-  link.addEventListener("click", closeMenu);
-});
-
-// ACTIVE PAGE
-document.querySelectorAll(".navLink,.mobileLink").forEach(link=>{
-  if(link.href === window.location.href){
-    link.classList.add("active");
-  }
-});
-
-document.querySelector(".logo-text").style.fontSize =
-  window.scrollY > 80 ? "1.3rem" : "1.55rem";
-
-// SWIPE CLOSE
-mobilePanel.addEventListener("touchstart",e=>{
-  startX = e.touches[0].clientX;
-});
-
-mobilePanel.addEventListener("touchend",e=>{
-  let endX = e.changedTouches[0].clientX;
-  if(endX - startX > 80){
-    closeMenu();
-  }
-});
-
-// SHRINK HEADER
-window.addEventListener("scroll",()=>{
-  if(window.scrollY > 80){
-    header.classList.add("shrink");
-    logo.classList.add("scale-90");
-  } else {
-    header.classList.remove("shrink");
-    logo.classList.remove("scale-90");
-  }
-});
+  mobPanel.classList.add("hidden");mobPanel.classList.remove("flex");
+}));
+window.addEventListener("scroll",()=>mainHeader.classList.toggle("nav-shrink",window.scrollY>60));
 </script>
 
-<!-- ================= HERO ================= -->
-<section class="bg-gradient-to-r from-orange-500 to-sky-600 text-white py-36 text-center">
-
-<h1 class="text-4xl md:text-6xl font-bold mb-6">
-Our Services & Expertise
-</h1>
-
-<p class="max-w-3xl mx-auto text-lg opacity-90">
-Delivering innovative technology solutions, professional training,
-and scalable business services for tomorrow’s enterprises.
-</p>
-
+<!-- ══ HERO ════════════════════════════════════════════════════════════ -->
+<section class="bg-gradient-to-r from-orange-500 to-sky-600 text-white pt-32 pb-16 text-center px-6">
+  <p class="text-xs font-bold tracking-[3px] uppercase opacity-70 mb-4">BrightGen Technologies</p>
+  <h1 class="text-4xl md:text-5xl font-bold mb-5 leading-tight">Our Services &amp; Expertise</h1>
+  <p class="max-w-xl mx-auto text-base opacity-80 leading-relaxed">
+    Click any service category below to explore what we offer — then select a specific service to see details, rates, and how to apply.
+  </p>
 </section>
 
-<!-- ================= DETAILED SERVICES ================= -->
-<section class="bg-white">
-
-<!-- SOFTWARE -->
-<div class="max-w-7xl mx-auto px-8 py-28 grid md:grid-cols-2 gap-16 items-center">
-
-  <div class="fade-up">
-    <h2 class="text-4xl font-bold mb-6 text-sky-700">
-      Software Solutions
-    </h2>
-
-    <p class="text-slate-600 mb-6">
-      BrightGen develops secure, scalable enterprise applications,
-      SaaS platforms, and automation systems tailored to evolving
-      business requirements across industries.
-    </p>
-
-    <ul class="space-y-3 mb-8 text-slate-600">
-      <li>✔ Web & Mobile Application Development</li>
-      <li>✔ ERP / CRM Systems</li>
-      <li>✔ AI-powered Automation</li>
-      <li>✔ API & Microservices Architecture</li>
-    </ul>
-
-    <a href="contact.html"
-      class="inline-block bg-sky-700 text-white px-6 py-3 rounded-xl shadow hover:scale-105 transition">
-      Talk to Our Team
-    </a>
-  </div>
-
-  <img
-    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
-    alt="BrightGen Technologies software development team building enterprise applications"
-    class="rounded-3xl shadow-xl"/>
+<!-- ══ SECTION LABEL ═══════════════════════════════════════════════════ -->
+<div class="text-center py-12 px-6 fu">
+  <p class="text-xs font-bold tracking-[3px] uppercase text-sky-600 mb-3">What We Offer</p>
+  <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-3">Three Pillars of Service</h2>
+  <p class="text-slate-500 text-sm max-w-md mx-auto leading-relaxed">Click a category card to expand it. Then tap a service to view full details.</p>
 </div>
 
-<!-- CLOUD -->
-<div class="bg-slate-50">
+<!-- ══ 3-CARD GRID ═════════════════════════════════════════════════════ -->
+<div class="services-grid">
 
-<div class="max-w-7xl mx-auto px-8 py-28 grid md:grid-cols-2 gap-16 items-center">
+  <!-- ── CARD 1: FINANCIAL SERVICES ── -->
+  <div class="cat-card fu" id="cat-fin">
+    <div class="cat-head" onclick="toggleCat('cat-fin','open-fin')">
+      <div class="cat-icon-wrap icon-orange">💼</div>
+      <h2>Financial Services</h2>
+      <p>Education Loans · Business Loans · Loan Against Property · Balance Transfer · Home Loans</p>
+      <div class="cat-prompt">
+        <span id="prompt-fin">Click to Explore</span>
+        <i class="fa-solid fa-chevron-down chevron" id="chev-fin"></i>
+      </div>
+    </div>
 
-  <img
-    src="https://www.point-star.com/wp-content/uploads/2025/11/gcp.png"
-    alt="BrightGen Technologies GCP cloud migration and DevOps consulting services"
-    class="rounded-3xl shadow-xl"/>
-
-  <div class="fade-up">
-    <h2 class="text-4xl font-bold mb-6 text-orange-500">
-      Cloud Services
-    </h2>
-
-    <p class="text-slate-600 mb-6">
-      Our cloud experts help organizations migrate, modernize,
-      and optimize infrastructure using secure, cost-effective
-      cloud-native architectures.
-    </p>
-
-    <ul class="space-y-3 mb-8 text-slate-600">
-      <li>✔ Cloud Migration & Strategy</li>
-      <li>✔ DevOps & CI/CD Automation</li>
-      <li>✔ Kubernetes & Containerization</li>
-      <li>✔ Managed Cloud Operations</li>
-    </ul>
-
-    <a href="contact.html"
-      class="inline-block bg-orange-500 text-white px-6 py-3 rounded-xl shadow hover:scale-105 transition">
-      Start Cloud Journey
-    </a>
+    <div class="cat-body" id="body-fin">
+      <button class="sub-btn" onclick="showDetail('d-edu','orange')">
+        <div class="sub-ico">🎓</div>
+        <span class="sub-name">Education Loan</span>
+        <i class="fa-solid fa-chevron-right sub-caret"></i>
+      </button>
+      <button class="sub-btn" onclick="showDetail('d-biz','orange')">
+        <div class="sub-ico">🏢</div>
+        <span class="sub-name">Business Loan</span>
+        <i class="fa-solid fa-chevron-right sub-caret"></i>
+      </button>
+      <button class="sub-btn" onclick="showDetail('d-lap','orange')">
+        <div class="sub-ico">🏠</div>
+        <span class="sub-name">Loan Against Property (LAP)</span>
+        <i class="fa-solid fa-chevron-right sub-caret"></i>
+      </button>
+      <button class="sub-btn" onclick="showDetail('d-bt','orange')">
+        <div class="sub-ico">🔄</div>
+        <span class="sub-name">Balance Transfer</span>
+        <i class="fa-solid fa-chevron-right sub-caret"></i>
+      </button>
+      <button class="sub-btn" onclick="showDetail('d-home','orange')">
+        <div class="sub-ico">🛏️</div>
+        <span class="sub-name">Home / Accommodation Loan</span>
+        <i class="fa-solid fa-chevron-right sub-caret"></i>
+      </button>
+    </div>
   </div>
 
-</div>
-</div>
+  <!-- ── CARD 2: IMPORTS & EXPORTS ── -->
+  <div class="cat-card fu" id="cat-imp">
+    <div class="cat-head" onclick="toggleCat('cat-imp','open-imp')">
+      <div class="cat-icon-wrap icon-sky">🌐</div>
+      <h2>Imports &amp; Exports</h2>
+      <p>Trade Consulting · Documentation &amp; Compliance · Freight &amp; Logistics Advisory</p>
+      <div class="cat-prompt">
+        <span id="prompt-imp">Click to Explore</span>
+        <i class="fa-solid fa-chevron-down chevron" id="chev-imp"></i>
+      </div>
+    </div>
 
-<!-- TRAINING -->
-<div class="max-w-7xl mx-auto px-8 py-28 grid md:grid-cols-2 gap-16 items-center">
-
-  <div class="fade-up">
-    <h2 class="text-4xl font-bold mb-6 text-sky-700">
-      College Technical Training Programs
-    </h2>
-
-    <p class="text-slate-600 mb-6">
-      BrightGen partners with universities to deliver curriculum-aligned,
-      industry-focused technical education and placement-driven skill
-      development initiatives.
-    </p>
-
-    <ul class="space-y-3 mb-8 text-slate-600">
-      <li>✔ Full-stack Development Tracks</li>
-      <li>✔ Data Science & AI</li>
-      <li>✔ Cybersecurity Fundamentals</li>
-      <li>✔ Certification Preparation</li>
-    </ul>
-
-    <a href="contact.html"
-      class="inline-block bg-sky-700 text-white px-6 py-3 rounded-xl shadow hover:scale-105 transition">
-      Partner With Us
-    </a>
+    <div class="cat-body" id="body-imp">
+      <button class="sub-btn" onclick="showDetail('d-trade','sky')">
+        <div class="sub-ico">📦</div>
+        <span class="sub-name">Trade Consulting</span>
+        <i class="fa-solid fa-chevron-right sub-caret"></i>
+      </button>
+      <button class="sub-btn" onclick="showDetail('d-docs','sky')">
+        <div class="sub-ico">📄</div>
+        <span class="sub-name">Documentation &amp; Compliance</span>
+        <i class="fa-solid fa-chevron-right sub-caret"></i>
+      </button>
+      <button class="sub-btn" onclick="showDetail('d-freight','sky')">
+        <div class="sub-ico">🚢</div>
+        <span class="sub-name">Freight &amp; Logistics Advisory</span>
+        <i class="fa-solid fa-chevron-right sub-caret"></i>
+      </button>
+    </div>
   </div>
 
-  <img
-    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
-    alt="BrightGen Technologies technical training programs for engineering students"
-    class="rounded-3xl shadow-xl"/>
+  <!-- ── CARD 3: IT TRAININGS ── -->
+  <div class="cat-card fu" id="cat-it">
+    <div class="cat-head" onclick="toggleCat('cat-it','open-it')">
+      <div class="cat-icon-wrap icon-sky">💻</div>
+      <h2>IT Trainings &amp; More</h2>
+      <p>Software Solutions · College Training · BEC English · Internships · English &amp; German Language</p>
+      <div class="cat-prompt">
+        <span id="prompt-it">Click to Explore</span>
+        <i class="fa-solid fa-chevron-down chevron" id="chev-it"></i>
+      </div>
+    </div>
+
+    <div class="cat-body" id="body-it">
+      <button class="sub-btn" onclick="showDetail('d-soft','sky')">
+        <div class="sub-ico">⚙️</div>
+        <span class="sub-name">Software Solutions</span>
+        <i class="fa-solid fa-chevron-right sub-caret"></i>
+      </button>
+      <button class="sub-btn" onclick="showDetail('d-college','sky')">
+        <div class="sub-ico">🎓</div>
+        <span class="sub-name">College Technical Training</span>
+        <i class="fa-solid fa-chevron-right sub-caret"></i>
+      </button>
+      <button class="sub-btn" onclick="showDetail('d-bec','sky')">
+        <div class="sub-ico">🗣️</div>
+        <span class="sub-name">BEC English Training</span>
+        <i class="fa-solid fa-chevron-right sub-caret"></i>
+      </button>
+      <button class="sub-btn" onclick="showDetail('d-intern','sky')">
+        <div class="sub-ico">🚀</div>
+        <span class="sub-name">Internship Training</span>
+        <i class="fa-solid fa-chevron-right sub-caret"></i>
+      </button>
+      <button class="sub-btn" onclick="showDetail('d-ielts','sky')">
+        <div class="sub-ico">📝</div>
+        <span class="sub-name">English Proficiency Exam Training</span>
+        <i class="fa-solid fa-chevron-right sub-caret"></i>
+      </button>
+      <button class="sub-btn" onclick="showDetail('d-german','sky')">
+        <div class="sub-ico">🇩🇪</div>
+        <span class="sub-name">German Language Training</span>
+        <i class="fa-solid fa-chevron-right sub-caret"></i>
+      </button>
+    </div>
+  </div>
+
+</div><!-- /services-grid -->
+
+<!-- ══ DETAIL DRAWERS (full-width, below grid) ════════════════════════ -->
+
+<!-- EDUCATION LOAN -->
+<div class="detail-drawer" id="d-edu">
+  <div class="detail-inner">
+    <button class="detail-close" onclick="closeDetail('d-edu')"><i class="fa-solid fa-xmark"></i></button>
+    <div class="d-top">
+      <div class="d-icon orange">🎓</div>
+      <div>
+        <div class="d-title">Education Loan</div>
+        <div class="d-sub">Fund your dream degree in India or abroad. Repayment begins only after your course ends — with a built-in moratorium period.</div>
+      </div>
+    </div>
+    <div class="pills">
+      <span class="pill pill-orange">ROI* from 9% p.a.</span>
+      <span class="pill pill-sky">Up to ₹50 Lakhs*</span>
+      <span class="pill pill-purple">Tenure up to 15 yrs*</span>
+      <span class="pill pill-green">Section 80E Tax Benefit</span>
+    </div>
+    <table class="spec-table">
+      <tr><td>Moratorium Period</td><td>Full course duration + 6–12 months post-completion</td></tr>
+      <tr><td>Expenses Covered</td><td>Tuition, Hostel, Travel, Books, Equipment</td></tr>
+      <tr><td>Applicable For</td><td>Recognised institutions in India and abroad</td></tr>
+      <tr><td>Co-Applicant</td><td>Parent or guardian with stable income</td></tr>
+    </table>
+    <div class="feat-label orange-label">Eligibility Highlights</div>
+    <div class="feat-grid">
+      <div class="feat-item"><span class="feat-check orange">✓</span>Indian national, aged 16–35 years</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>Confirmed admission letter required</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>Minimum 50% in last qualification</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>Government-recognised institution</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>Co-applicant with good credit history</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>15+ competing lender offers compared</div>
+    </div>
+    <div class="disc">* All rates, amounts and tenures are indicative. Actual figures are determined by the lending institution based on credit score, co-applicant profile, and RBI guidelines. BrightGen is an advisory intermediary only.</div>
+    <div class="d-actions">
+      <a href="service-financial.html#education-loan" class="btn-orange">Apply for Education Loan <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="btn-outline-o">Speak to an Advisor</a>
+    </div>
+  </div>
+</div>
+
+<!-- BUSINESS LOAN -->
+<div class="detail-drawer" id="d-biz">
+  <div class="detail-inner">
+    <button class="detail-close" onclick="closeDetail('d-biz')"><i class="fa-solid fa-xmark"></i></button>
+    <div class="d-top">
+      <div class="d-icon orange">🏢</div>
+      <div>
+        <div class="d-title">Business Loan</div>
+        <div class="d-sub">Collateral-free working capital, expansion funds, or equipment finance for MSMEs, startups, and self-employed professionals.</div>
+      </div>
+    </div>
+    <div class="pills">
+      <span class="pill pill-orange">ROI* from 8% p.a.</span>
+      <span class="pill pill-sky">₹5 L – ₹2 Crore*</span>
+      <span class="pill pill-purple">Tenure up to 7 yrs*</span>
+      <span class="pill pill-slate">No Collateral Required</span>
+    </div>
+    <table class="spec-table">
+      <tr><td>Disbursal Time*</td><td>48–72 hours post-approval (subject to lender processing)</td></tr>
+      <tr><td>Eligible Entities</td><td>MSME · Pvt Ltd · LLP · Proprietorship · Partnership</td></tr>
+      <tr><td>Min Business Age</td><td>1–2 years in operation (lender-dependent)</td></tr>
+      <tr><td>Min Annual Turnover</td><td>₹10 Lakhs+ (varies by lender)</td></tr>
+    </table>
+    <div class="feat-label orange-label">Eligibility Highlights</div>
+    <div class="feat-grid">
+      <div class="feat-item"><span class="feat-check orange">✓</span>Owner / director aged 21–65 years</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>CIBIL score 650+ preferred</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>GST-registered business preferred</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>Positive net cash flow or profitability</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>Any legitimate business purpose</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>15+ lender offers compared simultaneously</div>
+    </div>
+    <div class="disc">* ROI, amount, tenure, and disbursal timelines are indicative. Subject to business financials, credit assessment, and lender discretion.</div>
+    <div class="d-actions">
+      <a href="service-financial.html#business-loan" class="btn-orange">Apply for Business Loan <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="btn-outline-o">Speak to an Advisor</a>
+    </div>
+  </div>
+</div>
+
+<!-- LAP -->
+<div class="detail-drawer" id="d-lap">
+  <div class="detail-inner">
+    <button class="detail-close" onclick="closeDetail('d-lap')"><i class="fa-solid fa-xmark"></i></button>
+    <div class="d-top">
+      <div class="d-icon orange">🏠</div>
+      <div>
+        <div class="d-title">Loan Against Property (LAP)</div>
+        <div class="d-sub">Unlock your property's full value without selling it — our lowest rate and longest tenure across all loan products.</div>
+      </div>
+    </div>
+    <div class="pills">
+      <span class="pill pill-orange">ROI* from 6% p.a.</span>
+      <span class="pill pill-sky">₹10 L – ₹5 Crore*</span>
+      <span class="pill pill-purple">Tenure up to 20 yrs*</span>
+      <span class="pill pill-slate">LTV up to 65%*</span>
+    </div>
+    <table class="spec-table">
+      <tr><td>Property Types</td><td>Residential · Commercial · Industrial plots</td></tr>
+      <tr><td>Ownership</td><td>Title stays in your name throughout the loan</td></tr>
+      <tr><td>End Use</td><td>Business expansion · Personal needs · Any purpose</td></tr>
+      <tr><td>Valuation</td><td>Property valuation report arranged by BrightGen</td></tr>
+    </table>
+    <div class="feat-label orange-label">Eligibility Highlights</div>
+    <div class="feat-grid">
+      <div class="feat-item"><span class="feat-check orange">✓</span>Clear title owner of the property</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>Salaried or self-employed, aged 21–65</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>ITR filed for last 2–3 years</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>No heavy existing mortgage on property</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>Property within approved municipal area</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>CIBIL score 650+ preferred</div>
+    </div>
+    <div class="disc">* ROI, amount, tenure, and LTV ratio are indicative. Subject to property valuation, lender assessment, and prevailing RBI guidelines at time of sanction.</div>
+    <div class="d-actions">
+      <a href="service-financial.html#lap" class="btn-orange">Apply for LAP <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="btn-outline-o">Speak to an Advisor</a>
+    </div>
+  </div>
+</div>
+
+<!-- BALANCE TRANSFER -->
+<div class="detail-drawer" id="d-bt">
+  <div class="detail-inner">
+    <button class="detail-close" onclick="closeDetail('d-bt')"><i class="fa-solid fa-xmark"></i></button>
+    <div class="d-top">
+      <div class="d-icon orange">🔄</div>
+      <div>
+        <div class="d-title">Balance Transfer</div>
+        <div class="d-sub">Move your existing loan to a lender with a lower interest rate and reduce your monthly EMI burden significantly.</div>
+      </div>
+    </div>
+    <div class="pills">
+      <span class="pill pill-sky">Potentially lower ROI*</span>
+      <span class="pill pill-green">Reduced monthly EMI*</span>
+      <span class="pill pill-slate">All loan types eligible</span>
+    </div>
+    <table class="spec-table">
+      <tr><td>Eligible Loan Types</td><td>Home · Business · LAP · Education · Personal</td></tr>
+      <tr><td>Additional Benefit</td><td>Top-up loan option on transfer</td></tr>
+      <tr><td>Min Track Record</td><td>6–12 EMIs paid on existing loan</td></tr>
+      <tr><td>Processing</td><td>BrightGen handles end-to-end coordination</td></tr>
+    </table>
+    <div class="feat-label orange-label">Key Benefits</div>
+    <div class="feat-grid">
+      <div class="feat-item"><span class="feat-check orange">✓</span>Clean repayment track record required</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>CIBIL score 650+ preferred</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>Compare 15+ competing lender offers</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>Option for additional top-up amount</div>
+    </div>
+    <div class="disc">* Actual savings depend on existing loan balance, remaining tenure, current rate, and the new lender's offer. BrightGen acts as advisory intermediary only.</div>
+    <div class="d-actions">
+      <a href="contact.html" class="btn-orange">Check My Savings <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="btn-outline-o">Speak to an Advisor</a>
+    </div>
+  </div>
+</div>
+
+<!-- HOME LOAN -->
+<div class="detail-drawer" id="d-home">
+  <div class="detail-inner">
+    <button class="detail-close" onclick="closeDetail('d-home')"><i class="fa-solid fa-xmark"></i></button>
+    <div class="d-top">
+      <div class="d-icon orange">🛏️</div>
+      <div>
+        <div class="d-title">Home / Accommodation Loan</div>
+        <div class="d-sub">Purchase, construct, or renovate your home with competitive rates, long tenures, and dual income tax benefits.</div>
+      </div>
+    </div>
+    <div class="pills">
+      <span class="pill pill-orange">ROI* from 8.5% p.a.</span>
+      <span class="pill pill-sky">Up to ₹5 Crore*</span>
+      <span class="pill pill-purple">Tenure up to 30 yrs*</span>
+      <span class="pill pill-green">Sec 80C + Sec 24 Benefits</span>
+    </div>
+    <table class="spec-table">
+      <tr><td>Purpose</td><td>Purchase · Construction · Renovation · Extension</td></tr>
+      <tr><td>LTV Ratio*</td><td>Up to 80% of property value (lender-assessed)</td></tr>
+      <tr><td>Eligible For</td><td>Salaried and self-employed individuals</td></tr>
+      <tr><td>Co-Applicant</td><td>Spouse or family member permitted</td></tr>
+    </table>
+    <div class="feat-label orange-label">Eligibility Highlights</div>
+    <div class="feat-grid">
+      <div class="feat-item"><span class="feat-check orange">✓</span>Indian resident, aged 21–65 years</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>Stable income with 2–3 years ITR</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>CIBIL score 700+ preferred</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>Property in approved municipal area</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>Principal repayment deductible u/s 80C</div>
+      <div class="feat-item"><span class="feat-check orange">✓</span>Interest deductible u/s 24 up to ₹2 Lakhs</div>
+    </div>
+    <div class="disc">* ROI, amount, LTV, and tenure are indicative. Subject to property valuation, lender assessment, income profile, and prevailing RBI guidelines.</div>
+    <div class="d-actions">
+      <a href="contact.html" class="btn-orange">Apply for Home Loan <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="btn-outline-o">Speak to an Advisor</a>
+    </div>
+  </div>
+</div>
+
+<!-- TRADE CONSULTING -->
+<div class="detail-drawer" id="d-trade">
+  <div class="detail-inner">
+    <button class="detail-close" onclick="closeDetail('d-trade')"><i class="fa-solid fa-xmark"></i></button>
+    <div class="d-top">
+      <div class="d-icon">📦</div>
+      <div>
+        <div class="d-title">Trade Consulting</div>
+        <div class="d-sub">End-to-end advisory for businesses seeking to establish or expand import/export operations across international markets.</div>
+      </div>
+    </div>
+    <div class="feat-label">What's Included</div>
+    <div class="feat-grid">
+      <div class="feat-item"><span class="feat-check">✓</span>Market entry strategy for new geographies</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Supplier and buyer identification</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Trade agreement and tariff guidance</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Incoterms and contract advisory</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Trade risk assessment and mitigation</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Letter of Credit (LC) facilitation</div>
+    </div>
+    <div class="d-actions">
+      <a href="contact.html" class="btn-sky">Enquire Now <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="btn-outline-s">Speak to an Advisor</a>
+    </div>
+  </div>
+</div>
+
+<!-- DOCUMENTATION -->
+<div class="detail-drawer" id="d-docs">
+  <div class="detail-inner">
+    <button class="detail-close" onclick="closeDetail('d-docs')"><i class="fa-solid fa-xmark"></i></button>
+    <div class="d-top">
+      <div class="d-icon">📄</div>
+      <div>
+        <div class="d-title">Documentation &amp; Compliance</div>
+        <div class="d-sub">Accurate, compliant trade documentation to ensure smooth customs clearance and regulatory approval at every border.</div>
+      </div>
+    </div>
+    <div class="feat-label">What's Included</div>
+    <div class="feat-grid">
+      <div class="feat-item"><span class="feat-check">✓</span>Bill of Lading and Airway Bill preparation</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Certificate of Origin documentation</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Packing list and commercial invoice</div>
+      <div class="feat-item"><span class="feat-check">✓</span>DGFT / IEC registration guidance</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Customs duty classification (HS codes)</div>
+      <div class="feat-item"><span class="feat-check">✓</span>FEMA / RBI remittance compliance</div>
+    </div>
+    <div class="d-actions">
+      <a href="contact.html" class="btn-sky">Enquire Now <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="btn-outline-s">Speak to an Advisor</a>
+    </div>
+  </div>
+</div>
+
+<!-- FREIGHT -->
+<div class="detail-drawer" id="d-freight">
+  <div class="detail-inner">
+    <button class="detail-close" onclick="closeDetail('d-freight')"><i class="fa-solid fa-xmark"></i></button>
+    <div class="d-top">
+      <div class="d-icon">🚢</div>
+      <div>
+        <div class="d-title">Freight &amp; Logistics Advisory</div>
+        <div class="d-sub">Expert guidance on selecting the most cost-effective freight mode and logistics partner for your shipment requirements.</div>
+      </div>
+    </div>
+    <div class="feat-label">What's Included</div>
+    <div class="feat-grid">
+      <div class="feat-item"><span class="feat-check">✓</span>Sea, air, and land freight comparison</div>
+      <div class="feat-item"><span class="feat-check">✓</span>FCL vs LCL cargo guidance</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Freight forwarder selection support</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Cargo insurance advisory</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Port of origin and destination planning</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Last-mile delivery coordination</div>
+    </div>
+    <div class="d-actions">
+      <a href="contact.html" class="btn-sky">Enquire Now <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="btn-outline-s">Speak to an Advisor</a>
+    </div>
+  </div>
+</div>
+
+<!-- SOFTWARE SOLUTIONS -->
+<div class="detail-drawer" id="d-soft">
+  <div class="detail-inner">
+    <button class="detail-close" onclick="closeDetail('d-soft')"><i class="fa-solid fa-xmark"></i></button>
+    <div class="d-top">
+      <div class="d-icon">⚙️</div>
+      <div>
+        <div class="d-title">Software Solutions</div>
+        <div class="d-sub">Secure, scalable enterprise applications, SaaS platforms, and automation systems built to evolving business requirements.</div>
+      </div>
+    </div>
+    <div class="feat-label">What's Included</div>
+    <div class="feat-grid">
+      <div class="feat-item"><span class="feat-check">✓</span>Web &amp; Mobile Application Development</div>
+      <div class="feat-item"><span class="feat-check">✓</span>ERP / CRM System Development</div>
+      <div class="feat-item"><span class="feat-check">✓</span>AI-powered Automation Workflows</div>
+      <div class="feat-item"><span class="feat-check">✓</span>API &amp; Microservices Architecture</div>
+      <div class="feat-item"><span class="feat-check">✓</span>SaaS Platform Engineering</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Cloud-native Application Design</div>
+    </div>
+    <div class="d-actions">
+      <a href="contact.html" class="btn-sky">Talk to Our Team <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="btn-outline-s">Request a Quote</a>
+    </div>
+  </div>
+</div>
+
+<!-- COLLEGE TRAINING -->
+<div class="detail-drawer" id="d-college">
+  <div class="detail-inner">
+    <button class="detail-close" onclick="closeDetail('d-college')"><i class="fa-solid fa-xmark"></i></button>
+    <div class="d-top">
+      <div class="d-icon">🎓</div>
+      <div>
+        <div class="d-title">College Technical Training Programs</div>
+        <div class="d-sub">Curriculum-aligned, industry-focused technical programs delivered in partnership with universities for placement-driven outcomes.</div>
+      </div>
+    </div>
+    <div class="feat-label">What's Included</div>
+    <div class="feat-grid">
+      <div class="feat-item"><span class="feat-check">✓</span>Full-stack Development Tracks</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Data Science &amp; Artificial Intelligence</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Cybersecurity Fundamentals</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Industry Certification Preparation</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Placement-driven skill development</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Industry expert-led live sessions</div>
+    </div>
+    <div class="d-actions">
+      <a href="contact.html" class="btn-sky">Partner With Us <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="btn-outline-s">Learn More</a>
+    </div>
+  </div>
+</div>
+
+<!-- BEC ENGLISH -->
+<div class="detail-drawer" id="d-bec">
+  <div class="detail-inner">
+    <button class="detail-close" onclick="closeDetail('d-bec')"><i class="fa-solid fa-xmark"></i></button>
+    <div class="d-top">
+      <div class="d-icon">🗣️</div>
+      <div>
+        <div class="d-title">BEC English Training</div>
+        <div class="d-sub">Cambridge Business English Certificate coaching — preparing professionals for international communication and multinational careers.</div>
+      </div>
+    </div>
+    <div class="feat-label">What's Included</div>
+    <div class="feat-grid">
+      <div class="feat-item"><span class="feat-check">✓</span>Cambridge BEC Preliminary, Vantage &amp; Higher</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Corporate Communication Skills</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Interview Preparation &amp; Coaching</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Presentation &amp; Meeting Skills</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Business Writing &amp; Email Etiquette</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Full mock exams with detailed feedback</div>
+    </div>
+    <div class="d-actions">
+      <a href="contact.html" class="btn-sky">Enroll Today <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="btn-outline-s">Learn More</a>
+    </div>
+  </div>
 </div>
 
 <!-- INTERNSHIP -->
-<div class="bg-slate-50">
-
-<div class="max-w-7xl mx-auto px-8 py-28 grid md:grid-cols-2 gap-16 items-center">
-
-  <img
-    src="https://images.unsplash.com/photo-1551836022-d5d88e9218df"
-    alt="BrightGen Technologies internship training with live industry projects"
-    class="rounded-3xl shadow-xl"/>
-
-  <div class="fade-up">
-    <h2 class="text-4xl font-bold mb-6 text-orange-500">
-      Internship Training
-    </h2>
-
-    <p class="text-slate-600 mb-6">
-      Our immersive internship programs provide real-world exposure,
-      guided mentorship, and enterprise project experience.
-    </p>
-
-    <ul class="space-y-3 mb-8 text-slate-600">
-      <li>✔ Live Industry Projects</li>
-      <li>✔ Senior Engineer Mentorship</li>
-      <li>✔ Career Coaching</li>
-      <li>✔ Placement Assistance</li>
-    </ul>
-
-    <a href="contact.html"
-      class="inline-block bg-orange-500 text-white px-6 py-3 rounded-xl shadow hover:scale-105 transition">
-      Apply Now
-    </a>
+<div class="detail-drawer" id="d-intern">
+  <div class="detail-inner">
+    <button class="detail-close" onclick="closeDetail('d-intern')"><i class="fa-solid fa-xmark"></i></button>
+    <div class="d-top">
+      <div class="d-icon">🚀</div>
+      <div>
+        <div class="d-title">Internship Training</div>
+        <div class="d-sub">Immersive real-world programs with senior engineer mentorship, live project exposure, and placement support.</div>
+      </div>
+    </div>
+    <div class="feat-label">What's Included</div>
+    <div class="feat-grid">
+      <div class="feat-item"><span class="feat-check">✓</span>Live Industry Projects</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Senior Engineer Mentorship</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Career Coaching &amp; Guidance</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Placement Assistance</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Official Certificate of Completion</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Resume &amp; LinkedIn Profile Review</div>
+    </div>
+    <div class="d-actions">
+      <a href="contact.html" class="btn-sky">Apply Now <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="btn-outline-s">Learn More</a>
+    </div>
   </div>
-
-</div>
 </div>
 
-<!-- BEC -->
-<div class="max-w-7xl mx-auto px-8 py-28 grid md:grid-cols-2 gap-16 items-center">
-
-  <div class="fade-up">
-    <h2 class="text-4xl font-bold mb-6 text-sky-700">
-      BEC English Training
-    </h2>
-
-    <p class="text-slate-600 mb-6">
-      Our Business English Certificate programs prepare professionals
-      for international communication, leadership roles, and
-      multinational work environments.
-    </p>
-
-    <ul class="space-y-3 mb-8 text-slate-600">
-      <li>✔ Cambridge BEC Exam Coaching</li>
-      <li>✔ Corporate Communication Skills</li>
-      <li>✔ Interview Readiness</li>
-      <li>✔ Presentation Mastery</li>
-    </ul>
-
-    <a href="contact.html"
-      class="inline-block bg-sky-700 text-white px-6 py-3 rounded-xl shadow hover:scale-105 transition">
-      Enroll Today
-    </a>
+<!-- ENGLISH PROFICIENCY -->
+<div class="detail-drawer" id="d-ielts">
+  <div class="detail-inner">
+    <button class="detail-close" onclick="closeDetail('d-ielts')"><i class="fa-solid fa-xmark"></i></button>
+    <div class="d-top">
+      <div class="d-icon">📝</div>
+      <div>
+        <div class="d-title">English Proficiency Exam Training</div>
+        <div class="d-sub">Structured coaching for IELTS, TOEFL, PTE and other internationally recognised English proficiency examinations.</div>
+      </div>
+    </div>
+    <div class="feat-label">What's Included</div>
+    <div class="feat-grid">
+      <div class="feat-item"><span class="feat-check">✓</span>IELTS Academic &amp; General Training</div>
+      <div class="feat-item"><span class="feat-check">✓</span>TOEFL iBT Preparation</div>
+      <div class="feat-item"><span class="feat-check">✓</span>PTE Academic Coaching</div>
+      <div class="feat-item"><span class="feat-check">✓</span>All four skills: Reading, Writing, Speaking, Listening</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Full-length mock tests with analysis</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Targeted band-score improvement</div>
+    </div>
+    <div class="d-actions">
+      <a href="contact.html" class="btn-sky">Enroll Today <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="btn-outline-s">Learn More</a>
+    </div>
   </div>
-
-  <img
-    src="https://images.unsplash.com/photo-1521791136064-7986c2920216"
-    alt="BrightGen Technologies business English communication training program"
-    class="rounded-3xl shadow-xl"/>
 </div>
 
-<!-- FINANCIAL -->
-<div class="bg-slate-50">
-
-<div class="max-w-7xl mx-auto px-8 py-28 grid md:grid-cols-2 gap-16 items-center">
-
-  <img
-    src="https://img.freepik.com/premium-photo/business-finance-accounting-businessman-hand-holding-financial-service-icon-virtual-screen_1296497-206.jpg"
-    alt="BrightGen Technologies financial consulting and fintech solutions"
-    class="rounded-3xl shadow-xl"/>
-
-  <div class="fade-up">
-    <h2 class="text-4xl font-bold mb-6 text-orange-500">
-      Financial Services
-    </h2>
-
-    <p class="text-slate-600 mb-6">
-      BrightGen provides strategic financial consulting, fintech
-      enablement solutions, and digital transformation for
-      modern enterprises.
-    </p>
-
-    <ul class="space-y-3 mb-8 text-slate-600">
-      <li>✔ Business Advisory Services</li>
-      <li>✔ Digital Payments Integration</li>
-      <li>✔ Regulatory Compliance</li>
-      <li>✔ Risk & Audit Solutions</li>
-    </ul>
-
-    <a href="index.html"
-      class="inline-block bg-orange-500 text-white px-6 py-3 rounded-xl shadow hover:scale-105 transition">
-      Speak to an Advisor
-    </a>
+<!-- GERMAN LANGUAGE -->
+<div class="detail-drawer" id="d-german">
+  <div class="detail-inner">
+    <button class="detail-close" onclick="closeDetail('d-german')"><i class="fa-solid fa-xmark"></i></button>
+    <div class="d-top">
+      <div class="d-icon">🇩🇪</div>
+      <div>
+        <div class="d-title">German Language Training</div>
+        <div class="d-sub">CEFR-aligned German courses from absolute beginner through advanced, including Goethe-Zertifikat exam preparation.</div>
+      </div>
+    </div>
+    <div class="feat-label">What's Included</div>
+    <div class="feat-grid">
+      <div class="feat-item"><span class="feat-check">✓</span>A1 to C1 CEFR-aligned curriculum</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Goethe-Zertifikat exam preparation</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Conversational German for daily use</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Business German for corporate settings</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Grammar, vocabulary &amp; pronunciation</div>
+      <div class="feat-item"><span class="feat-check">✓</span>Online &amp; offline batch options</div>
+    </div>
+    <div class="d-actions">
+      <a href="contact.html" class="btn-sky">Enroll Today <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="btn-outline-s">Learn More</a>
+    </div>
   </div>
-
-</div>
 </div>
 
-</section>
-
-
-<!-- ================= CTA ================= -->
+<!-- ══ CTA ════════════════════════════════════════════════════════════ -->
 <section class="bg-gradient-to-r from-sky-700 to-orange-500 text-white py-20 text-center px-8">
-
-<h2 class="text-3xl font-bold mb-4">
-Let’s Build the Future Together
-</h2>
-
-<p class="mb-6 opacity-90">
-Partner with BrightGen Technologies to transform your ideas into reality.
-</p>
-
-<a href="index.html"
-class="inline-block bg-white text-sky-700 px-8 py-4 rounded-2xl font-semibold shadow hover:scale-105 transition">
-Request Consultation
-</a>
-
+  <h2 class="text-3xl font-bold mb-4">Let's Build the Future Together</h2>
+  <p class="mb-8 opacity-90 max-w-md mx-auto text-sm leading-relaxed">Free consultation, zero obligation. Our advisors will match you with the right service for your goals.</p>
+  <div class="flex gap-4 justify-center flex-wrap">
+    <a href="contact.html" class="inline-flex items-center gap-2 bg-white text-sky-700 font-bold px-8 py-4 rounded-2xl shadow hover:scale-105 transition text-sm">
+      Schedule Free Consultation <i class="fa-solid fa-arrow-right"></i>
+    </a>
+    <a href="tel:+917799776679" class="inline-flex items-center gap-2 border-2 border-white/30 text-white font-medium px-6 py-4 rounded-2xl hover:bg-white/10 transition text-sm">
+      <i class="fa-solid fa-phone"></i> +91 7799776679
+    </a>
+  </div>
 </section>
 
-<!-- ================= PREMIUM GLASS FOOTER ================= -->
-
+<!-- ══ FOOTER ══════════════════════════════════════════════════════════ -->
 <footer class="relative overflow-hidden text-slate-100">
-
-  <!-- 🌊 STATIC WAVE DIVIDER -->
   <div class="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180">
-    <svg viewBox="0 0 1440 90" preserveAspectRatio="none"
-         class="w-full h-20 fill-sky-950">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none" class="w-full h-20" style="fill:#0c4a6e">
       <path d="M0,40 C120,60 240,20 360,35 480,50 600,80 720,70 840,60 960,30 1080,35 1200,40 1320,60 1440,55 L1440,0 L0,0 Z"></path>
     </svg>
   </div>
+  <div class="pt-10 pb-10 relative" style="background:linear-gradient(135deg,#0f172a,#1e293b,#0c4a6e)">
+    <div class="absolute -top-24 -left-24 w-80 h-80 rounded-full blur-3xl" style="background:rgba(14,165,233,.15)"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl" style="background:rgba(249,115,22,.1)"></div>
 
-  <!-- BACKDROP -->
-  <div class="bg-gradient-to-br from-slate-950 via-indigo-950 to-sky-950 pt-10 pb-10 relative">
-
-    <!-- SOFT LIGHT ORBS -->
-    <div class="absolute -top-24 -left-24 w-80 h-80 bg-sky-500/20 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl"></div>
-
-    <!-- GLASS GRID -->
     <div class="container mx-auto px-6 grid gap-14 md:grid-cols-3 text-center relative z-10">
-
-      <!-- LOGO CARD -->
       <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-xl">
-        <img src="BGT new.jpeg"
-             alt="BrightGen Technologies Logo"
-             class="w-40 mx-auto mb-5">
-
-        <p class="text-sm leading-relaxed opacity-90">
-          BrightGen Technologies delivers enterprise software, cloud modernization and global technology training programs.
-        </p>
-
+        <img src="BGT new.png" alt="BrightGen Technologies" class="w-36 mx-auto mb-5">
+        <p class="text-sm leading-relaxed opacity-75">BrightGen Technologies delivers enterprise software, cloud modernization and global technology training programs.</p>
         <div class="flex justify-center gap-5 mt-6 text-xl">
-          <a href="https://www.linkedin.com/company/brightgen-technologies/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="hover:text-sky-400 transition" 
-              aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin"></i>
+          <a href="https://www.linkedin.com/company/brightgen-technologies/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
           </a>
-          <!-- <a href="#" class="hover:text-sky-400 transition">𝕏</a>
-          <a href="#" class="hover:text-sky-400 transition">f</a> -->
         </div>
       </div>
-
-      <!-- CONTACT CARD -->
       <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-xl">
-        <h4 class="font-semibold text-white mb-4 tracking-wide">Address</h4>
-        <ul class="space-y-4 text-sm">
-          <li>📍 Flat No. 302, Sai Gagan Arcade, KRCR Colony Road, Bachupally, K.V.Rangareddy, Qutubullapur, Telangana, India. - 500090. </li>
-          <li>📞 <a href="tel:+917799776679">+91 7799776679</a></li>
-          <li>✉️ <a href="mailto:info@brightgen.in">info@brightgen.in</a></li>
+        <h4 class="font-semibold text-white mb-4 tracking-wide text-sm uppercase">Address</h4>
+        <ul class="space-y-4 text-sm text-left">
+          <li class="flex gap-2"><span>📍</span><span>Flat No. 302, Sai Gagan Arcade, KRCR Colony Road, Bachupally, Telangana — 500090.</span></li>
+          <li>📞 <a href="tel:+917799776679" class="hover:text-sky-400">+91 7799776679</a></li>
+          <li>✉️ <a href="mailto:info@brightgen.in" class="hover:text-sky-400">info@brightgen.in</a></li>
         </ul>
       </div>
-
-      <!-- QUICK LINKS CARD -->
       <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-xl">
-        <h4 class="font-semibold text-white mb-4 tracking-wide">Quick Links</h4>
+        <h4 class="font-semibold text-white mb-4 tracking-wide text-sm uppercase">Quick Links</h4>
         <ul class="space-y-3 text-sm">
-          <li><a href="index.html" class="hover:text-sky-400 transition">Home</a></li>
+          <li><a href="index.html"    class="hover:text-sky-400 transition">Home</a></li>
           <li><a href="about-us.html" class="hover:text-sky-400 transition">About Us</a></li>
           <li><a href="services.html" class="hover:text-sky-400 transition">Services</a></li>
-          <li><a href="careers.html" class="hover:text-sky-400 transition">Careers</a></li>
-          <li><a href="contact.html" class="hover:text-sky-400 transition">Contact</a></li>
+          <li><a href="careers.html"  class="hover:text-sky-400 transition">Careers</a></li>
+          <li><a href="contact.html"  class="hover:text-sky-400 transition">Contact</a></li>
         </ul>
       </div>
-
     </div>
 
-    <!-- BOTTOM BAR -->
     <div class="border-t border-white/10 mt-16 pt-6 relative z-10">
-      <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-
-        <p>
-          © <span id="year"></span> BrightGen Technologies. All rights reserved.
-        </p>
-
+      <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/25">
+        <p>© <span id="yr"></span> BrightGen Technologies. All rights reserved. &nbsp;·&nbsp; *Rates &amp; tenure are indicative and subject to lender terms.</p>
         <div class="flex gap-6">
-          <a href="privacy-policy.html" class="hover:text-sky-400 transition">Privacy Policy</a>
-          <a href="terms-of-service.html" class="hover:text-sky-400 transition">Terms of Service</a>
+          <a href="privacy-policy.html"   class="hover:text-white transition">Privacy Policy</a>
+          <a href="terms-of-service.html" class="hover:text-white transition">Terms of Service</a>
         </div>
-
       </div>
     </div>
-
   </div>
-
 </footer>
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
-<script>
-document.getElementById("year").textContent =
-  new Date().getFullYear();
-
-// scroll animation
-const cards = document.querySelectorAll(".fade-up");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-});
-
-cards.forEach(card => observer.observe(card));
-</script>
-
-<!-- ================= FLOATING GLOBAL CTA ================= -->
-
-<!-- Enquire Button -->
+<!-- Floating CTAs -->
 <a href="contact.html"
-   class="fixed bottom-6 right-6 bg-brandBlue text-white px-6 py-4 rounded-full shadow-xl hover:bg-brandOrange transition z-50">
+   class="fixed bottom-6 right-6 bg-sky-700 text-white px-5 py-3 rounded-full shadow-xl hover:bg-orange-500 transition z-50 font-semibold text-sm">
   📩 Enquire
 </a>
-
-<!-- WhatsApp Chat -->
-<a href="https://wa.me/917799776679"
-   target="_blank"
-   aria-label="Chat on WhatsApp"
-   class="fixed bottom-24 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-xl text-3xl z-50 hover:scale-110 transition">
-  💬
+<a href="https://wa.me/917799776679" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+   class="fixed bottom-20 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl text-2xl z-50 hover:scale-110 transition">
+  <i class="fa-brands fa-whatsapp"></i>
 </a>
+
+<!-- ══ SCRIPTS ════════════════════════════════════════════════════════ -->
 <script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        brandBlue: "#0369a1",
-        brandOrange: "#f59e0b"
-      }
-    }
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+/* Fade-up */
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add("show"); });
+},{threshold:.08});
+document.querySelectorAll(".fu").forEach(el=>io.observe(el));
+
+/* Active cat tracking */
+let activeCat = null;
+let activeDetail = null;
+
+/* Toggle category card */
+function toggleCat(cardId, openClass){
+  const card = document.getElementById(cardId);
+  const isOpen = card.classList.contains(openClass);
+
+  // Close everything
+  ["cat-fin","cat-imp","cat-it"].forEach(id=>{
+    const c = document.getElementById(id);
+    c.classList.remove("open-fin","open-imp","open-it");
+  });
+  document.querySelectorAll(".sub-btn").forEach(b=>b.classList.remove("active"));
+  document.querySelectorAll(".detail-drawer").forEach(d=>d.classList.remove("visible"));
+  activeDetail = null;
+
+  // Update prompts
+  ["fin","imp","it"].forEach(k=>{
+    document.getElementById("prompt-"+k).textContent = "Click to Explore";
+  });
+
+  if(!isOpen){
+    card.classList.add(openClass);
+    activeCat = cardId;
+    const key = cardId.replace("cat-","");
+    document.getElementById("prompt-"+key).textContent = "Click to Collapse";
+    setTimeout(()=>card.scrollIntoView({behavior:"smooth",block:"nearest"}),60);
+  } else {
+    activeCat = null;
   }
+}
+
+/* Show detail drawer (full width below grid) */
+function showDetail(detailId, colorHint){
+  const panel = document.getElementById(detailId);
+  const isOpen = panel.classList.contains("visible");
+
+  // Deactivate all sub-btns and drawers
+  document.querySelectorAll(".sub-btn").forEach(b=>b.classList.remove("active"));
+  document.querySelectorAll(".detail-drawer").forEach(d=>d.classList.remove("visible"));
+
+  if(!isOpen){
+    panel.classList.add("visible");
+    activeDetail = detailId;
+
+    // Mark the button active — find it by its onclick attribute
+    document.querySelectorAll(".sub-btn").forEach(b=>{
+      if(b.getAttribute("onclick") && b.getAttribute("onclick").includes(detailId)){
+        b.classList.add("active");
+      }
+    });
+
+    setTimeout(()=>panel.scrollIntoView({behavior:"smooth",block:"nearest"}),60);
+  } else {
+    activeDetail = null;
+  }
+}
+
+/* Close button on detail drawer */
+function closeDetail(detailId){
+  document.getElementById(detailId).classList.remove("visible");
+  document.querySelectorAll(".sub-btn").forEach(b=>b.classList.remove("active"));
+  activeDetail = null;
 }
 </script>
 
