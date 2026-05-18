@@ -267,15 +267,13 @@ window.addEventListener("scroll",()=>mainHeader.classList.toggle("nav-shrink",wi
         <i class="fa-solid fa-chevron-down chev"></i>
       </button>
 
-      <!-- SUB-PANEL -->
-      <div class="sub-panel" id="panel-fin">
-        <div class="sub-tabs">
-          <button class="sub-tab" onclick="showSub('fin','edu')">🎓 Education Loan</button>
-          <button class="sub-tab" onclick="showSub('fin','biz')">🏢 Business Loan</button>
-          <button class="sub-tab" onclick="showSub('fin','lap')">🏠 Loan Against Property</button>
-          <button class="sub-tab" onclick="showSub('fin','bt')">🔄 Balance Transfer</button>
-          <button class="sub-tab" onclick="showSub('fin','home')">🛏️ Home / Accommodation Loan</button>
-        </div>
+      <div class="loan-tabs-container">
+      <button class="tab-btn">🎓 Education Loan</button>
+      <button class="tab-btn">🏢 Business Loan</button>
+      <button class="tab-btn">🏠 Loan Against Property</button>
+      <button class="tab-btn">🔄 Balance Transfer</button>
+      <button class="tab-btn">🤝 Accommodation Assistance</button> 
+      </div>
 
         <!-- ── Education Loan ── -->
         <div class="sub-detail" id="fin-edu">
