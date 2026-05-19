@@ -3,135 +3,338 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Apply Now</title>
-
+  <title>Apply Now – Loan Application</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: Arial, sans-serif;
+    :root {
+      --orange: #ff6b00;
+      --orange-dark: #e05a00;
+      --orange-light: #fff4ec;
+      --text: #1a1a2e;
+      --muted: #6b7280;
+      --bg: #f7f3ef;
+      --white: #ffffff;
+      --shadow: 0 8px 40px rgba(255,107,0,0.10);
     }
 
-    body{
-      background:#f5f7fb;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      min-height:100vh;
-      padding:20px;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0;
     }
 
-    .container{
-      background:#fff;
-      width:100%;
-      max-width:500px;
-      padding:40px;
-      border-radius:14px;
-      box-shadow:0 4px 20px rgba(0,0,0,0.08);
+    /* ── Top Banner ── */
+    .top-banner {
+      width: 100%;
+      background: var(--orange);
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 13px;
+      letter-spacing: 0.5px;
     }
 
-    h1{
-      color:#ff6b00;
-      margin-bottom:10px;
-      text-align:center;
+    /* ── Hero Section ── */
+    .hero {
+      width: 100%;
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d1a0e 100%);
+      padding: 60px 20px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    p{
-      text-align:center;
-      color:#666;
-      margin-bottom:30px;
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(255,107,0,0.18) 0%, transparent 70%);
+      border-radius: 50%;
     }
 
-    form{
-      display:flex;
-      flex-direction:column;
-      gap:18px;
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 250px; height: 250px;
+      background: radial-gradient(circle, rgba(255,107,0,0.12) 0%, transparent 70%);
+      border-radius: 50%;
     }
 
-    input,
-    select,
-    textarea{
-      padding:14px;
-      border:1px solid #ddd;
-      border-radius:8px;
-      font-size:15px;
-      outline:none;
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,107,0,0.18);
+      color: #ffb380;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255,107,0,0.3);
     }
 
-    input:focus,
-    select:focus,
-    textarea:focus{
-      border-color:#ff6b00;
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 16px;
     }
 
-    button{
-      background:#ff6b00;
-      color:white;
-      border:none;
-      padding:14px;
-      font-size:16px;
-      border-radius:8px;
-      cursor:pointer;
-      transition:0.3s;
+    .hero h1 span {
+      color: var(--orange);
     }
 
-    button:hover{
-      background:#e55d00;
+    .hero p {
+      color: rgba(255,255,255,0.65);
+      font-size: 16px;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
     }
 
-    .back{
-      text-align:center;
-      margin-top:20px;
+    /* ── Stats Row ── */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+      flex-wrap: wrap;
     }
 
-    .back a{
-      color:#ff6b00;
-      text-decoration:none;
-      font-weight:bold;
+    .stat {
+      text-align: center;
     }
 
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+
+    /* ── Main Content ── */
+    .main {
+      width: 100%;
+      max-width: 680px;
+      padding: 0 20px 60px;
+      margin-top: -30px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* ── Form Card ── */
+    .form-card {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .form-card-header {
+      background: var(--orange-light);
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #ffe5d0;
+    }
+
+    .form-icon {
+      width: 40px; height: 40px;
+      background: var(--orange);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .form-card-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--text);
+    }
+
+    .form-card-header p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ── Zoho iFrame ── */
+    .zoho-frame-wrap {
+      padding: 10px 0 0;
+    }
+
+    .zoho-frame-wrap iframe {
+      width: 100%;
+      min-height: 680px;
+      border: none;
+      display: block;
+    }
+
+    /* ── Trust Badges ── */
+    .trust-row {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .trust-item span.icon {
+      width: 30px; height: 30px;
+      background: var(--white);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+
+    /* ── Back Link ── */
+    .back-wrap {
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    .back-wrap a {
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+
+    .back-wrap a:hover {
+      gap: 10px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      color: #aaa;
+      border-top: 1px solid #eee;
+      background: white;
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding: 40px 16px 60px; }
+      .stats { gap: 24px; }
+      .form-card-header { padding: 16px 20px; }
+      .trust-row { gap: 14px; }
+    }
   </style>
 </head>
-
 <body>
 
-  <div class="container">
+  <!-- Top Banner -->
+  <div class="top-banner">
+    🎉 Quick approvals · Lowest interest rates · Trusted by 20,000+ customers
+  </div>
 
-    <h1>Apply Now</h1>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-badge">Loan Application</div>
+    <h1>Get the <span>Funds</span> You<br>Need — Fast</h1>
+    <p>Fill out the form below and our advisor will reach out within 24 hours with a tailored solution.</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number">₹100Cr+</div>
+        <div class="stat-label">Disbursed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">20K+</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">24hr</div>
+        <div class="stat-label">Response Time</div>
+      </div>
+    </div>
+  </section>
 
-    <p>Fill out the form below and our advisor will contact you shortly.</p>
+  <!-- Main Form Area -->
+  <div class="main">
 
-    <form>
+    <!-- Form Card -->
+    <div class="form-card">
+      <div class="form-card-header">
+        <div class="form-icon">📋</div>
+        <div>
+          <h2>Loan Application Form</h2>
+          <p>All fields are secure and confidential</p>
+        </div>
+      </div>
 
-      <input type="text" placeholder="Full Name" required>
+      <!-- Zoho Form Embedded -->
+      <div class="zoho-frame-wrap">
+        <iframe
+          src="https://forms.zohopublic.in/infobrig1/form/LoanApplication/formperma/eLyq2H0FgOhz4AY5kut7nNHlzA7AwtrNaQs28B_jhto"
+          title="Loan Application Form"
+          allowtransparency="true">
+        </iframe>
+      </div>
+    </div>
 
-      <input type="tel" placeholder="Mobile Number" required>
+    <!-- Trust Badges -->
+    <div class="trust-row">
+      <div class="trust-item">
+        <span class="icon">🔒</span> 100% Secure
+      </div>
+      <div class="trust-item">
+        <span class="icon">⚡</span> Fast Processing
+      </div>
+      <div class="trust-item">
+        <span class="icon">🤝</span> No Hidden Fees
+      </div>
+      <div class="trust-item">
+        <span class="icon">📞</span> Expert Advisors
+      </div>
+    </div>
 
-      <input type="email" placeholder="Email Address">
-
-      <select required>
-        <option value="">Select Loan Type</option>
-        <option>Education Loan</option>
-        <option>Business Loan</option>
-        <option>Personal Loan</option>
-        <option>Home Loan / LAP</option>
-        <option>Mortgage Loan</option>
-      </select>
-
-      <input type="number" placeholder="Required Loan Amount">
-
-      <textarea rows="4" placeholder="Additional Details"></textarea>
-
-      <button type="submit">Submit Application</button>
-
-    </form>
-
-    <div class="back">
+    <!-- Back Link -->
+    <div class="back-wrap">
       <a href="index.html">← Back to Home</a>
     </div>
 
   </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 InfoBrig. All rights reserved. · Your data is safe with us.
+  </footer>
 
 </body>
 </html>
